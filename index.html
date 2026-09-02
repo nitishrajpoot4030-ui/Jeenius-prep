@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeenius Path</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7ff;
+      color: #172033;
+    }
+
+    header {
+      background: linear-gradient(135deg, #5b5be7, #8e44ad);
+      color: white;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #eef0ff, #fff0fb);
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      color: #5b35d5;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .creator {
+      font-size: 14px;
+      margin-bottom: 30px;
+      color: #666;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #5b35d5;
+      color: white;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    section {
+      padding: 55px 7%;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .easy {
+      border-top: 6px solid #22c55e;
+    }
+
+    .medium {
+      border-top: 6px solid #f59e0b;
+    }
+
+    .hard {
+      border-top: 6px solid #ef4444;
+    }
+
+    .feature {
+      border-top: 6px solid #5b35d5;
+    }
+
+    footer {
+      background: #17152d;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      nav {
+        width: 100%;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 5px;
+        display: inline-block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🧠 Jeenius Path</div>
+
+    <nav>
+      <a href="#practice">Practice</a>
+      <a href="#tests">Mock Tests</a>
+      <a href="#features">Features</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Jeenius Path</h1>
+
+    <p>
+      Practice • Test • Analyse • Improve
+    </p>
+
+    <p class="creator">
+      Built by Ansh Kumar
+    </p>
+
+    <div class="buttons">
+      <button class="btn" onclick="startPractice()">
+        Start Practicing
+      </button>
+
+      <button class="btn" onclick="startMockTest()">
+        Take a Mock Test
+      </button>
+    </div>
+  </div>
+
+  <section id="practice">
+    <h2>📝 Question Practice</h2>
+
+    <div class="cards">
+
+      <div class="card easy" onclick="selectLevel('Easy')">
+        <div class="icon">🟢</div>
+        <h3>Easy</h3>
+        <p>JEE Main Level</p>
+      </div>
+
+      <div class="card medium" onclick="selectLevel('Medium')">
+        <div class="icon">🟡</div>
+        <h3>Medium</h3>
+        <p>JEE Main → Advanced</p>
+      </div>
+
+      <div class="card hard" onclick="selectLevel('Hard')">
+        <div class="icon">🔴</div>
+        <h3>Hard</h3>
+        <p>Advanced + Deep Problems</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="tests">
+    <h2>🧪 Mock Tests</h2>
+
+    <div class="cards">
+
+      <div class="card feature" onclick="startMockTest()">
+        <div class="icon">🎯</div>
+        <h3>JEE Main Test</h3>
+        <p>Practice with JEE Main style tests.</p>
+      </div>
+
+      <div class="card feature" onclick="startMockTest()">
+        <div class="icon">🔥</div>
+        <h3>JEE Advanced Test</h3>
+        <p>Challenge yourself with Advanced level questions.</p>
+      </div>
+
+      <div class="card feature" onclick="customTest()">
+        <div class="icon">⚙️</div>
+        <h3>Custom Test</h3>
+        <p>Select your own chapters and difficulty.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>🚀 More Coming Soon</h2>
+
+    <div class="cards">
+
+      <div class="card feature">
+        <div class="icon">❓</div>
+        <h3>Doubt Community</h3>
+        <p>Ask and discuss JEE doubts.</p>
+      </div>
+
+      <div class="card feature">
+        <div class="icon">📅</div>
+        <h3>My Day</h3>
+        <p>Create and track your daily study schedule.</p>
+      </div>
+
+      <div class="card feature">
+        <div class="icon">📊</div>
+        <h3>Progress</h3>
+        <p>Analyse your preparation and performance.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Jeenius Path</p>
+    <p>Built by Ansh Kumar</p>
+  </footer>
+
+  <script>
+
+    function startPractice() {
+      alert("Question Practice will be available here!");
+    }
+
+    function startMockTest() {
+      alert("Mock Test section will be available here!");
+    }
+
+    function selectLevel(level) {
+      alert("You selected: " + level);
+    }
+
+    function customTest() {
+      alert("Custom Test builder coming soon!");
+    }
+
+  </script>
+
+</body>
+</html>
