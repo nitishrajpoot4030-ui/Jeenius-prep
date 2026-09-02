@@ -3,190 +3,400 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jeenius Path</title>
+
+<title>Jeenius Path | JEE Preparation & Practice</title>
+
+<meta name="description" content="Jeenius Path is a JEE preparation platform for chapter-wise practice, mock tests, progress tracking and improvement. Built by Ansh Kumar.">
+<meta name="keywords" content="JEE preparation, JEE Main, JEE Advanced, JEE practice, JEE mock test, Jeenius Path">
+<meta name="author" content="Ansh Kumar">
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f7fb;
-  color: #172033;
+html{
+  scroll-behavior:smooth;
 }
 
-header {
-  background: #111827;
-  color: white;
-  padding: 18px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7fb;
+  color:#172033;
+  min-height:100vh;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
+header{
+  background:#111827;
+  color:white;
+  padding:16px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 3px 15px rgba(0,0,0,.15);
 }
 
-nav button {
-  background: none;
-  border: none;
-  color: white;
-  margin: 5px 10px;
-  cursor: pointer;
-  font-size: 15px;
+.logo{
+  font-size:24px;
+  font-weight:bold;
 }
 
-.hero {
-  text-align: center;
-  padding: 55px 20px;
-  background: linear-gradient(135deg,#dbeafe,#f5f3ff);
+.logo span{
+  color:#60a5fa;
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 12px;
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
 }
 
-.hero p {
-  font-size: 18px;
-  margin: 8px;
+nav button{
+  background:transparent;
+  border:none;
+  color:white;
+  padding:9px 12px;
+  cursor:pointer;
+  border-radius:7px;
+  font-size:14px;
 }
 
-.btn {
-  border: none;
-  padding: 13px 22px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin: 10px 5px;
-  font-size: 15px;
-  font-weight: bold;
-  background: #2563eb;
-  color: white;
+nav button:hover{
+  background:#374151;
 }
 
-.btn:hover {
-  opacity: 0.85;
+.hero{
+  text-align:center;
+  padding:70px 20px;
+  background:linear-gradient(135deg,#dbeafe,#ede9fe,#fef3c7);
 }
 
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 35px auto;
+.hero h1{
+  font-size:52px;
+  margin-bottom:12px;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 30px;
+.hero p{
+  font-size:18px;
+  margin:9px;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 20px;
+.hero .tagline{
+  font-size:21px;
+  font-weight:bold;
 }
 
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+.btn{
+  border:none;
+  padding:13px 21px;
+  border-radius:9px;
+  cursor:pointer;
+  margin:9px 5px;
+  font-size:15px;
+  font-weight:bold;
+  background:#2563eb;
+  color:white;
+  transition:.2s;
 }
 
-.card h3 {
-  margin-bottom: 10px;
+.btn:hover{
+  transform:translateY(-1px);
+  opacity:.9;
 }
 
-.green { border-top: 6px solid #22c55e; }
-.yellow { border-top: 6px solid #eab308; }
-.red { border-top: 6px solid #ef4444; }
-
-select, input {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border: 1px solid #ccd3df;
-  border-radius: 7px;
+.btn.secondary{
+  background:#111827;
 }
 
-.question-box {
-  background: white;
-  padding: 25px;
-  border-radius: 14px;
-  margin-top: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+.btn.green-btn{
+  background:#16a34a;
 }
 
-.option {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: #f1f5f9;
-  border: 1px solid #d5dce5;
-  padding: 13px;
-  margin: 10px 0;
-  border-radius: 8px;
-  cursor: pointer;
+.btn.red-btn{
+  background:#dc2626;
 }
 
-.option:hover {
-  background: #e2e8f0;
+.container{
+  width:90%;
+  max-width:1150px;
+  margin:40px auto;
 }
 
-.hidden {
-  display: none;
+.section-title{
+  text-align:center;
+  margin-bottom:25px;
+  font-size:31px;
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
-  gap: 15px;
-  margin-top: 20px;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
 }
 
-.stat {
-  background: white;
-  padding: 20px;
-  text-align: center;
-  border-radius: 12px;
+.card{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
-.stat strong {
-  display: block;
-  font-size: 30px;
-  margin-bottom: 5px;
+.card h3{
+  margin-bottom:10px;
 }
 
-footer {
-  text-align: center;
-  background: #111827;
-  color: white;
-  padding: 25px;
-  margin-top: 50px;
+.card p{
+  line-height:1.5;
 }
 
-.badge {
-  display: inline-block;
-  padding: 5px 9px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  background: #e0e7ff;
+.green{
+  border-top:6px solid #22c55e;
 }
 
-#result {
-  margin-top: 20px;
-  padding: 20px;
-  background: #ecfdf5;
-  border-radius: 10px;
-  font-size: 18px;
+.yellow{
+  border-top:6px solid #eab308;
+}
+
+.red{
+  border-top:6px solid #ef4444;
+}
+
+.blue{
+  border-top:6px solid #2563eb;
+}
+
+select,input{
+  width:100%;
+  padding:13px;
+  margin:8px 0 15px;
+  border:1px solid #cbd5e1;
+  border-radius:8px;
+  font-size:15px;
+  background:white;
+}
+
+label{
+  display:block;
+  margin-top:5px;
+}
+
+.question-box{
+  background:white;
+  padding:26px;
+  border-radius:15px;
+  margin-top:22px;
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.question-number{
+  color:#2563eb;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.question-text{
+  font-size:20px;
+  line-height:1.5;
+  margin:12px 0 20px;
+}
+
+.option{
+  display:block;
+  width:100%;
+  text-align:left;
+  background:#f8fafc;
+  border:1px solid #d5dce5;
+  padding:14px;
+  margin:11px 0;
+  border-radius:9px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.option:hover{
+  background:#e2e8f0;
+}
+
+.option.correct{
+  background:#dcfce7;
+  border-color:#22c55e;
+}
+
+.option.wrong{
+  background:#fee2e2;
+  border-color:#ef4444;
+}
+
+.hidden{
+  display:none!important;
+}
+
+.badge{
+  display:inline-block;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+  background:#e0e7ff;
+  margin-right:5px;
+}
+
+.badge.easy{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.badge.medium{
+  background:#fef3c7;
+  color:#92400e;
+}
+
+.badge.hard{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+.result{
+  margin-top:20px;
+  padding:22px;
+  background:#ecfdf5;
+  border-radius:12px;
+  border-left:5px solid #22c55e;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:16px;
+}
+
+.stat{
+  background:white;
+  padding:22px;
+  text-align:center;
+  border-radius:13px;
+  box-shadow:0 4px 14px rgba(0,0,0,.07);
+}
+
+.stat strong{
+  display:block;
+  font-size:32px;
+  margin-bottom:6px;
+  color:#2563eb;
+}
+
+.progress-bar{
+  width:100%;
+  height:15px;
+  background:#e5e7eb;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:10px;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:#2563eb;
+  transition:.3s;
+}
+
+.timer{
+  font-size:20px;
+  font-weight:bold;
+  color:#dc2626;
+  text-align:right;
+  margin-bottom:10px;
+}
+
+.mock-info{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.info-box{
+  background:#f1f5f9;
+  padding:10px 14px;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  background:#111827;
+  color:white;
+  padding:28px;
+  margin-top:60px;
+}
+
+.small{
+  font-size:13px;
+  opacity:.8;
+  margin-top:6px;
+}
+
+.feature{
+  text-align:center;
+}
+
+.feature-icon{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.home-features{
+  margin-top:35px;
+}
+
+.notice{
+  padding:15px;
+  border-radius:10px;
+  background:#eff6ff;
+  border-left:5px solid #2563eb;
+  margin-top:15px;
+  line-height:1.5;
+}
+
+@media(max-width:700px){
+
+  header{
+    justify-content:center;
+  }
+
+  .logo{
+    width:100%;
+    text-align:center;
+  }
+
+  nav{
+    justify-content:center;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero{
+    padding:50px 15px;
+  }
+
+  .container{
+    width:94%;
+  }
+
+  .question-text{
+    font-size:18px;
+  }
 }
 </style>
 </head>
@@ -194,7 +404,10 @@ footer {
 <body>
 
 <header>
-  <div class="logo">🧠 Jeenius Path</div>
+
+  <div class="logo">
+    🧠 <span>Jeenius Path</span>
+  </div>
 
   <nav>
     <button onclick="showSection('home')">Home</button>
@@ -202,97 +415,183 @@ footer {
     <button onclick="showSection('mock')">Mock Test</button>
     <button onclick="showSection('progress')">Progress</button>
   </nav>
+
 </header>
 
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
+
 <section id="home">
 
   <div class="hero">
+
     <h1>Jeenius Path 🚀</h1>
-    <p>Practice • Test • Analyse • Improve</p>
-    <p><b>Built by Ansh Kumar</b></p>
+
+    <p class="tagline">
+      Practice • Test • Analyse • Improve
+    </p>
+
+    <p>
+      Your smart path towards JEE preparation.
+    </p>
+
+    <p>
+      <b>Built by Ansh Kumar</b>
+    </p>
 
     <button class="btn" onclick="showSection('practice')">
-      Start Practicing
+      📚 Start Practicing
     </button>
 
-    <button class="btn" onclick="showSection('mock')">
-      Take a Mock Test
+    <button class="btn secondary" onclick="showSection('mock')">
+      📝 Take Mock Test
     </button>
+
   </div>
+
 
   <div class="container">
 
-    <h2 class="section-title">Choose Your Level</h2>
+    <h2 class="section-title">
+      Choose Your Practice Level
+    </h2>
 
     <div class="cards">
 
       <div class="card green">
         <h3>🟢 Easy</h3>
-        <p>JEE Main level practice.</p>
-        <button class="btn" onclick="startPractice('Easy')">
-          Practice
+        <p>
+          Build your concepts with beginner-friendly
+          JEE Main level questions.
+        </p>
+
+        <button class="btn green-btn"
+                onclick="startPractice('Easy')">
+          Practice Easy
         </button>
       </div>
+
 
       <div class="card yellow">
         <h3>🟡 Medium</h3>
-        <p>JEE Main + JEE Advanced level.</p>
-        <button class="btn" onclick="startPractice('Medium')">
-          Practice
+        <p>
+          Improve application skills with JEE Main
+          and JEE Advanced style questions.
+        </p>
+
+        <button class="btn"
+                onclick="startPractice('Medium')">
+          Practice Medium
         </button>
       </div>
 
+
       <div class="card red">
         <h3>🔴 Hard</h3>
-        <p>JEE Advanced + deep problem solving.</p>
-        <button class="btn" onclick="startPractice('Hard')">
-          Practice
+        <p>
+          Challenge yourself with deeper
+          JEE Advanced style problems.
+        </p>
+
+        <button class="btn red-btn"
+                onclick="startPractice('Hard')">
+          Practice Hard
         </button>
       </div>
 
     </div>
+
+
+    <div class="home-features">
+
+      <h2 class="section-title">
+        What Jeenius Path Offers
+      </h2>
+
+      <div class="cards">
+
+        <div class="card feature">
+          <div class="feature-icon">📚</div>
+          <h3>Chapter Practice</h3>
+          <p>
+            Select your subject, chapter and difficulty.
+          </p>
+        </div>
+
+        <div class="card feature">
+          <div class="feature-icon">⏱️</div>
+          <h3>Timed Tests</h3>
+          <p>
+            Test yourself with a timed mock-test system.
+          </p>
+        </div>
+
+        <div class="card feature">
+          <div class="feature-icon">📊</div>
+          <h3>Progress Tracking</h3>
+          <p>
+            Track attempts, accuracy and best scores.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
 </section>
 
 
-<!-- PRACTICE -->
+<!-- ================= PRACTICE ================= -->
+
 <section id="practice" class="hidden">
 
   <div class="container">
 
-    <h2 class="section-title">Question Practice 📚</h2>
+    <h2 class="section-title">
+      Question Practice 📚
+    </h2>
 
     <div class="card">
 
       <label><b>Subject</b></label>
 
-      <select id="subjectSelect" onchange="updateChapters()">
+      <select id="subjectSelect"
+              onchange="updateChapters()">
+
         <option value="Physics">Physics</option>
         <option value="Chemistry">Chemistry</option>
         <option value="Mathematics">Mathematics</option>
+
       </select>
+
 
       <label><b>Chapter</b></label>
 
-      <select id="chapterSelect">
-      </select>
+      <select id="chapterSelect"></select>
+
 
       <label><b>Difficulty</b></label>
 
       <select id="difficultySelect">
+
         <option>Easy</option>
         <option>Medium</option>
         <option>Hard</option>
+
       </select>
 
-      <button class="btn" onclick="loadQuestion()">
+
+      <button class="btn"
+              onclick="loadQuestion()">
+
         Start Question
+
       </button>
 
     </div>
+
 
     <div id="questionArea"></div>
 
@@ -301,30 +600,66 @@ footer {
 </section>
 
 
-<!-- MOCK TEST -->
+<!-- ================= MOCK TEST ================= -->
+
 <section id="mock" class="hidden">
 
   <div class="container">
 
-    <h2 class="section-title">Mock Test 📝</h2>
+    <h2 class="section-title">
+      Mock Test 📝
+    </h2>
+
 
     <div class="card">
 
-      <label><b>Choose Test</b></label>
+      <label><b>Test Type</b></label>
 
       <select id="mockSubject">
-        <option>JEE Main</option>
-        <option>JEE Advanced</option>
-        <option>Physics</option>
-        <option>Chemistry</option>
-        <option>Mathematics</option>
+
+        <option value="JEE Main">
+          JEE Main
+        </option>
+
+        <option value="JEE Advanced">
+          JEE Advanced
+        </option>
+
+        <option value="Physics">
+          Physics
+        </option>
+
+        <option value="Chemistry">
+          Chemistry
+        </option>
+
+        <option value="Mathematics">
+          Mathematics
+        </option>
+
       </select>
 
-      <button class="btn" onclick="startMock()">
-        Start Mock Test
+
+      <label><b>Number of Questions</b></label>
+
+      <select id="mockCount">
+
+        <option value="5">5 Questions</option>
+        <option value="10">10 Questions</option>
+        <option value="15">15 Questions</option>
+
+      </select>
+
+
+      <button class="btn"
+              onclick="startMock()">
+
+        🚀 Start Mock Test
+
       </button>
 
     </div>
+
 
     <div id="mockArea"></div>
 
@@ -333,12 +668,16 @@ footer {
 </section>
 
 
-<!-- PROGRESS -->
+<!-- ================= PROGRESS ================= -->
+
 <section id="progress" class="hidden">
 
   <div class="container">
 
-    <h2 class="section-title">Your Progress 📊</h2>
+    <h2 class="section-title">
+      Your Progress 📊
+    </h2>
+
 
     <div class="stats">
 
@@ -362,6 +701,34 @@ footer {
         Mock Tests
       </div>
 
+      <div class="stat">
+        <strong id="bestScore">0%</strong>
+        Best Mock Score
+      </div>
+
+    </div>
+
+
+    <div class="card"
+         style="margin-top:25px;">
+
+      <h3>Overall Accuracy</h3>
+
+      <div class="progress-bar">
+
+        <div id="progressFill"
+             class="progress-fill">
+        </div>
+
+      </div>
+
+      <button class="btn red-btn"
+              onclick="resetProgress()">
+
+        Reset Progress
+
+      </button>
+
     </div>
 
   </div>
@@ -370,40 +737,68 @@ footer {
 
 
 <footer>
-  <p>© 2026 Jeenius Path</p>
-  <p>Built by Ansh Kumar 🚀</p>
+
+  <p>
+    © 2026 Jeenius Path
+  </p>
+
+  <p>
+    Built by Ansh Kumar 🚀
+  </p>
+
+  <p class="small">
+    JEE Preparation • Practice • Tests • Progress
+  </p>
+
 </footer>
 
 
 <script>
 
-/* ---------------- DATA ---------------- */
+/* =====================================================
+   CHAPTER DATABASE
+===================================================== */
 
 const chapters = {
 
   Physics: [
+
     "Units & Measurements",
     "Kinematics",
     "Laws of Motion",
     "Work, Energy & Power",
+    "System of Particles & Centre of Mass",
     "Rotational Motion",
     "Gravitation",
-    "Properties of Matter",
+    "Mechanical Properties of Solids",
+    "Mechanical Properties of Fluids",
+    "Thermal Properties of Matter",
     "Thermodynamics",
     "Kinetic Theory",
     "Oscillations",
     "Waves",
     "Electrostatics",
     "Current Electricity",
-    "Magnetism",
+    "Moving Charges & Magnetism",
+    "Magnetism & Matter",
     "Electromagnetic Induction",
-    "Optics",
-    "Modern Physics"
+    "Alternating Current",
+    "Electromagnetic Waves",
+    "Ray Optics",
+    "Wave Optics",
+    "Dual Nature of Matter",
+    "Atoms",
+    "Nuclei",
+    "Semiconductor Electronics"
+
   ],
 
+
   Chemistry: [
+
     "Some Basic Concepts of Chemistry",
-    "Atomic Structure",
+    "Structure of Atom",
+    "Classification of Elements & Periodicity",
     "Chemical Bonding",
     "Thermodynamics",
     "Equilibrium",
@@ -411,21 +806,29 @@ const chapters = {
     "Solutions",
     "Electrochemistry",
     "Chemical Kinetics",
-    "Periodic Table",
+    "Surface Chemistry",
+    "General Principles of Metallurgy",
     "p-Block Elements",
-    "d & f Block Elements",
+    "d- and f-Block Elements",
     "Coordination Compounds",
     "Organic Chemistry Basics",
     "Hydrocarbons",
+    "Haloalkanes & Haloarenes",
     "Alcohols, Phenols & Ethers",
     "Aldehydes, Ketones & Carboxylic Acids",
-    "Amines"
+    "Amines",
+    "Biomolecules",
+    "Polymers",
+    "Chemistry in Everyday Life"
+
   ],
 
+
   Mathematics: [
+
     "Sets",
     "Relations & Functions",
-    "Trigonometry",
+    "Trigonometric Functions",
     "Complex Numbers",
     "Quadratic Equations",
     "Sequences & Series",
@@ -433,122 +836,372 @@ const chapters = {
     "Binomial Theorem",
     "Straight Lines",
     "Circles",
+    "Parabola",
+    "Ellipse",
+    "Hyperbola",
     "Limits",
     "Continuity & Differentiability",
     "Application of Derivatives",
-    "Integrals",
+    "Indefinite Integrals",
+    "Definite Integrals",
+    "Area Under Curves",
     "Differential Equations",
     "Matrices",
     "Determinants",
-    "Vectors",
-    "3D Geometry",
-    "Probability"
+    "Vector Algebra",
+    "Three Dimensional Geometry",
+    "Probability",
+    "Statistics"
+
   ]
 
 };
 
 
-/* Original sample questions.
-   These are NOT copied JEE PYQs. */
+/* =====================================================
+   ORIGINAL SAMPLE QUESTIONS
+   ===================================================== */
 
 const questions = [
 
-  {
-    subject:"Physics",
-    chapter:"Kinematics",
-    difficulty:"Easy",
-    q:"A car travels 20 m in 4 seconds. What is its average speed?",
-    options:["2 m/s","5 m/s","10 m/s","20 m/s"],
-    answer:1
-  },
+/* ---------- PHYSICS ---------- */
 
-  {
-    subject:"Mathematics",
-    chapter:"Quadratic Equations",
-    difficulty:"Easy",
-    q:"If x² - 5x + 6 = 0, what is the sum of its roots?",
-    options:["2","3","5","6"],
-    answer:2
-  },
+{
+ subject:"Physics",
+ chapter:"Units & Measurements",
+ difficulty:"Easy",
+ q:"Which SI unit is used for measuring length?",
+ options:["Kilogram","Metre","Second","Ampere"],
+ answer:1
+},
 
-  {
-    subject:"Chemistry",
-    chapter:"Atomic Structure",
-    difficulty:"Easy",
-    q:"Which particle has a negative charge?",
-    options:["Proton","Neutron","Electron","Nucleus"],
-    answer:2
-  },
+{
+ subject:"Physics",
+ chapter:"Kinematics",
+ difficulty:"Easy",
+ q:"A car travels 20 m in 4 seconds. What is its average speed?",
+ options:["2 m/s","5 m/s","10 m/s","20 m/s"],
+ answer:1
+},
 
-  {
-    subject:"Physics",
-    chapter:"Laws of Motion",
-    difficulty:"Medium",
-    q:"If the net force acting on an object is zero, its acceleration is:",
-    options:["Zero","Maximum","Negative","Infinite"],
-    answer:0
-  },
+{
+ subject:"Physics",
+ chapter:"Kinematics",
+ difficulty:"Medium",
+ q:"A particle starts from rest with constant acceleration 2 m/s². What is its velocity after 5 s?",
+ options:["5 m/s","10 m/s","15 m/s","20 m/s"],
+ answer:1
+},
 
-  {
-    subject:"Mathematics",
-    chapter:"Sequences & Series",
-    difficulty:"Medium",
-    q:"The common difference of 3, 7, 11, 15,... is:",
-    options:["2","3","4","5"],
-    answer:2
-  },
+{
+ subject:"Physics",
+ chapter:"Laws of Motion",
+ difficulty:"Medium",
+ q:"If the net force acting on an object is zero, its acceleration is:",
+ options:["Zero","Maximum","Negative","Infinite"],
+ answer:0
+},
 
-  {
-    subject:"Chemistry",
-    chapter:"Chemical Bonding",
-    difficulty:"Hard",
-    q:"Which type of bond involves sharing of electron pairs between atoms?",
-    options:["Ionic","Covalent","Metallic","Hydrogen"],
-    answer:1
-  }
+{
+ subject:"Physics",
+ chapter:"Work, Energy & Power",
+ difficulty:"Easy",
+ q:"What is the SI unit of work?",
+ options:["Newton","Joule","Watt","Pascal"],
+ answer:1
+},
+
+{
+ subject:"Physics",
+ chapter:"Gravitation",
+ difficulty:"Easy",
+ q:"What force keeps planets in orbit around the Sun?",
+ options:["Magnetic force","Gravitational force","Friction","Nuclear force"],
+ answer:1
+},
+
+{
+ subject:"Physics",
+ chapter:"Thermodynamics",
+ difficulty:"Easy",
+ q:"Temperature is a measure related to the average:",
+ options:["Mass","Kinetic energy of particles","Volume only","Pressure only"],
+ answer:1
+},
+
+{
+ subject:"Physics",
+ chapter:"Current Electricity",
+ difficulty:"Easy",
+ q:"The SI unit of electric current is:",
+ options:["Volt","Ohm","Ampere","Coulomb"],
+ answer:2
+},
+
+{
+ subject:"Physics",
+ chapter:"Electrostatics",
+ difficulty:"Medium",
+ q:"Like electric charges:",
+ options:["Attract each other","Repel each other","Have no interaction","Always disappear"],
+ answer:1
+},
+
+{
+ subject:"Physics",
+ chapter:"Modern Physics",
+ difficulty:"Easy",
+ q:"The charge of an electron is:",
+ options:["Positive","Negative","Zero","Variable"],
+ answer:1
+},
+
+
+/* ---------- CHEMISTRY ---------- */
+
+{
+ subject:"Chemistry",
+ chapter:"Some Basic Concepts of Chemistry",
+ difficulty:"Easy",
+ q:"The SI unit of amount of substance is:",
+ options:["Gram","Mole","Kilogram","Litre"],
+ answer:1
+},
+
+{
+ subject:"Chemistry",
+ chapter:"Structure of Atom",
+ difficulty:"Easy",
+ q:"Which particle has a negative charge?",
+ options:["Proton","Neutron","Electron","Nucleus"],
+ answer:2
+},
+
+{
+ subject:"Chemistry",
+ chapter:"Chemical Bonding",
+ difficulty:"Hard",
+ q:"Which type of bond involves sharing of electron pairs between atoms?",
+ options:["Ionic","Covalent","Metallic","Hydrogen"],
+ answer:1
+},
+
+{
+ subject:"Chemistry",
+ chapter:"Thermodynamics",
+ difficulty:"Easy",
+ q:"The SI unit of energy is:",
+ options:["Joule","Newton","Pascal","Watt"],
+ answer:0
+},
+
+{
+ subject:"Chemistry",
+ chapter:"Equilibrium",
+ difficulty:"Medium",
+ q:"At chemical equilibrium, the forward and reverse reaction rates are:",
+ options:["Both zero","Equal","Always different","Infinite"],
+ answer:1
+},
+
+{
+ subject:"Chemistry",
+ chapter:"Redox Reactions",
+ difficulty:"Easy",
+ q:"Oxidation is commonly associated with:",
+ options:["Loss of electrons","Gain of electrons","No electron change","Loss of protons only"],
+ answer:0
+},
+
+{
+ subject:"Chemistry",
+ chapter:"Solutions",
+ difficulty:"Easy",
+ q:"The component present in larger amount in a solution is generally called:",
+ options:["Solute","Solvent","Precipitate","Catalyst"],
+ answer:1
+},
+
+{
+ subject:"Chemistry",
+ chapter:"Chemical Kinetics",
+ difficulty:"Medium",
+ q:"A catalyst generally changes the:",
+ options:["Equilibrium constant","Activation energy","Atomic number","Molecular mass"],
+ answer:1
+},
+
+{
+ subject:"Chemistry",
+ chapter:"Periodic Table",
+ difficulty:"Easy",
+ q:"Elements in the same group generally have similar:",
+ options:["Atomic masses","Valence electron configuration","Number of shells","Neutron number"],
+ answer:1
+},
+
+{
+ subject:"Chemistry",
+ chapter:"Hydrocarbons",
+ difficulty:"Easy",
+ q:"Compounds containing only carbon and hydrogen are called:",
+ options:["Alcohols","Hydrocarbons","Amines","Ketones"],
+ answer:1
+},
+
+
+/* ---------- MATHEMATICS ---------- */
+
+{
+ subject:"Mathematics",
+ chapter:"Sets",
+ difficulty:"Easy",
+ q:"If A = {1,2,3}, how many elements are in A?",
+ options:["1","2","3","4"],
+ answer:2
+},
+
+{
+ subject:"Mathematics",
+ chapter:"Quadratic Equations",
+ difficulty:"Easy",
+ q:"If x² - 5x + 6 = 0, what is the sum of its roots?",
+ options:["2","3","5","6"],
+ answer:2
+},
+
+{
+ subject:"Mathematics",
+ chapter:"Sequences & Series",
+ difficulty:"Medium",
+ q:"The common difference of 3, 7, 11, 15,... is:",
+ options:["2","3","4","5"],
+ answer:2
+},
+
+{
+ subject:"Mathematics",
+ chapter:"Trigonometric Functions",
+ difficulty:"Easy",
+ q:"What is sin 90°?",
+ options:["0","1","-1","1/2"],
+ answer:1
+},
+
+{
+ subject:"Mathematics",
+ chapter:"Complex Numbers",
+ difficulty:"Easy",
+ q:"The value of i² is:",
+ options:["1","0","-1","i"],
+ answer:2
+},
+
+{
+ subject:"Mathematics",
+ chapter:"Matrices",
+ difficulty:"Easy",
+ q:"A matrix having 2 rows and 3 columns has how many elements?",
+ options:["5","6","8","9"],
+ answer:1
+},
+
+{
+ subject:"Mathematics",
+ chapter:"Probability",
+ difficulty:"Easy",
+ q:"The probability of a certain event is:",
+ options:["0","1/2","1","-1"],
+ answer:2
+},
+
+{
+ subject:"Mathematics",
+ chapter:"Binomial Theorem",
+ difficulty:"Medium",
+ q:"The number of terms in the expansion of (x + y)^5 is:",
+ options:["5","6","7","10"],
+ answer:1
+},
+
+{
+ subject:"Mathematics",
+ chapter:"Determinants",
+ difficulty:"Easy",
+ q:"A determinant of a 2 × 2 matrix contains how many terms in its expansion?",
+ options:["1","2","3","4"],
+ answer:1
+},
+
+{
+ subject:"Mathematics",
+ chapter:"Vectors",
+ difficulty:"Medium",
+ q:"The magnitude of a unit vector is:",
+ options:["0","1","2","Depends on direction"],
+ answer:1
+}
 
 ];
 
 
-/* ---------------- NAVIGATION ---------------- */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
-function showSection(section) {
+function showSection(section){
 
-  document.getElementById("home").classList.add("hidden");
-  document.getElementById("practice").classList.add("hidden");
-  document.getElementById("mock").classList.add("hidden");
-  document.getElementById("progress").classList.add("hidden");
+  const sections=[
+    "home",
+    "practice",
+    "mock",
+    "progress"
+  ];
 
-  document.getElementById(section).classList.remove("hidden");
+  sections.forEach(id=>{
+    document.getElementById(id)
+      .classList.add("hidden");
+  });
 
-  if(section === "progress") {
-    updateProgress();
+  document.getElementById(section)
+    .classList.remove("hidden");
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+  if(section==="practice"){
+    updateChapters();
   }
 
-  if(section === "practice") {
-    updateChapters();
+  if(section==="progress"){
+    updateProgress();
   }
 }
 
 
-/* ---------------- PRACTICE ---------------- */
+/* =====================================================
+   CHAPTER DROPDOWN
+===================================================== */
 
-function updateChapters() {
+function updateChapters(){
 
-  const subject =
+  const subject=
     document.getElementById("subjectSelect").value;
 
-  const select =
+  const select=
     document.getElementById("chapterSelect");
 
-  select.innerHTML = "";
+  select.innerHTML="";
 
-  chapters[subject].forEach(chapter => {
+  chapters[subject].forEach(chapter=>{
 
-    const option = document.createElement("option");
+    const option=
+      document.createElement("option");
 
-    option.textContent = chapter;
-    option.value = chapter;
+    option.textContent=chapter;
+    option.value=chapter;
 
     select.appendChild(option);
 
@@ -556,247 +1209,749 @@ function updateChapters() {
 }
 
 
-function startPractice(level) {
+/* =====================================================
+   START PRACTICE FROM HOME
+===================================================== */
+
+function startPractice(level){
 
   showSection("practice");
 
-  document.getElementById("difficultySelect").value = level;
+  document.getElementById(
+    "difficultySelect"
+  ).value=level;
 
   loadQuestion();
 }
 
 
-function loadQuestion() {
+/* =====================================================
+   LOAD PRACTICE QUESTION
+===================================================== */
 
-  const subject =
+function loadQuestion(){
+
+  const subject=
     document.getElementById("subjectSelect").value;
 
-  const chapter =
+  const chapter=
     document.getElementById("chapterSelect").value;
 
-  const difficulty =
+  const difficulty=
     document.getElementById("difficultySelect").value;
 
-  let matches = questions.filter(q =>
-    q.subject === subject &&
-    q.chapter === chapter &&
-    q.difficulty === difficulty
-  );
+  let matches=
+    questions.filter(q=>
+      q.subject===subject &&
+      q.chapter===chapter &&
+      q.difficulty===difficulty
+    );
 
-  /* If no exact sample question exists,
-     show an explanation instead of pretending
-     it is a PYQ. */
 
-  if(matches.length === 0) {
+  /* If exact difficulty is unavailable,
+     try the same chapter. */
 
-    document.getElementById("questionArea").innerHTML = `
+  if(matches.length===0){
+
+    matches=
+      questions.filter(q=>
+        q.subject===subject &&
+        q.chapter===chapter
+      );
+
+  }
+
+
+  /* If no question exists */
+
+  if(matches.length===0){
+
+    document.getElementById(
+      "questionArea"
+    ).innerHTML=`
+
       <div class="question-box">
-        <h3>📚 Question Bank Coming Soon</h3>
-        <p>
-          We don't have an original sample question for
-          this exact subject + chapter + difficulty yet.
+
+        <h3>📚 More Questions Coming Soon</h3>
+
+        <p style="margin-top:12px;line-height:1.6">
+
+          We currently don't have a sample question
+          for <b>${chapter}</b>.
+
+          <br><br>
+
+          The chapter is already available in Jeenius Path.
+          More original questions can be added to the
+          question bank later.
+
         </p>
-        <p style="margin-top:10px;">
-          More questions will be added in the next version.
-        </p>
+
+        <div class="notice">
+
+          💡 Tip: Use another chapter to try the
+          practice system right now.
+
+        </div>
+
       </div>
     `;
 
     return;
   }
 
-  const question =
-    matches[Math.floor(Math.random()*matches.length)];
 
-  let html = `
+  const question=
+    matches[
+      Math.floor(
+        Math.random()*matches.length
+      )
+    ];
+
+
+  let html=`
+
     <div class="question-box">
 
-      <span class="badge">${question.difficulty}</span>
+      <span class="badge ${question.difficulty.toLowerCase()}">
+        ${question.difficulty}
+      </span>
 
-      <h3 style="margin:15px 0;">
+      <span class="badge">
+        ${question.subject}
+      </span>
+
+      <p class="question-number">
+        ${question.chapter}
+      </p>
+
+      <div class="question-text">
         ${question.q}
-      </h3>
+      </div>
+
   `;
 
-  question.options.forEach((option,index) => {
 
-    html += `
-      <button class="option"
-        onclick="checkAnswer(${index},${question.answer})">
-        ${String.fromCharCode(65+index)}. ${option}
+  question.options.forEach((option,index)=>{
+
+    html+=`
+
+      <button
+        class="option"
+        onclick="checkAnswer(
+          ${index},
+          ${question.answer},
+          this
+        )">
+
+        ${String.fromCharCode(65+index)}.
+        ${option}
+
       </button>
+
     `;
 
   });
 
-  html += `
+
+  html+=`
+
       <div id="answerResult"></div>
+
+      <button
+        id="nextQuestion"
+        class="btn"
+        style="display:none"
+        onclick="loadQuestion()">
+
+        ➡️ Next Question
+
+      </button>
+
     </div>
+
   `;
 
-  document.getElementById("questionArea").innerHTML = html;
+
+  document.getElementById(
+    "questionArea"
+  ).innerHTML=html;
+
 }
 
 
-function checkAnswer(selected,correct) {
+/* =====================================================
+   CHECK PRACTICE ANSWER
+===================================================== */
 
-  let attempted =
-    Number(localStorage.getItem("attempted") || 0);
+function checkAnswer(
+  selected,
+  correct,
+  clickedButton
+){
 
-  let correctCount =
-    Number(localStorage.getItem("correct") || 0);
+  const buttons=
+    document.querySelectorAll(
+      "#questionArea .option"
+    );
 
-  attempted++;
+  buttons.forEach(button=>{
+    button.disabled=true;
+  });
 
-  if(selected === correct) {
+
+  const attempted=
+    Number(
+      localStorage.getItem("attempted")||0
+    );
+
+  let correctCount=
+    Number(
+      localStorage.getItem("correct")||0
+    );
+
+
+  localStorage.setItem(
+    "attempted",
+    attempted+1
+  );
+
+
+  if(selected===correct){
 
     correctCount++;
 
-    document.getElementById("answerResult").innerHTML =
-      "<p style='margin-top:15px'><b>✅ Correct!</b></p>";
+    localStorage.setItem(
+      "correct",
+      correctCount
+    );
 
-  } else {
+    clickedButton.classList.add("correct");
 
-    document.getElementById("answerResult").innerHTML =
-      "<p style='margin-top:15px'><b>❌ Incorrect. Try another question!</b></p>";
+    document.getElementById(
+      "answerResult"
+    ).innerHTML=`
+
+      <div class="result">
+
+        <b>✅ Correct!</b>
+
+        <p style="margin-top:7px">
+          Excellent! Keep going.
+        </p>
+
+      </div>
+
+    `;
+
+  }else{
+
+    clickedButton.classList.add("wrong");
+
+    buttons[correct].classList.add("correct");
+
+    document.getElementById(
+      "answerResult"
+    ).innerHTML=`
+
+      <div class="result"
+           style="background:#fff7ed;
+                  border-color:#f97316">
+
+        <b>❌ Incorrect</b>
+
+        <p style="margin-top:7px">
+          The correct answer is
+          <b>${String.fromCharCode(65+correct)}</b>.
+        </p>
+
+      </div>
+
+    `;
 
   }
 
-  localStorage.setItem("attempted",attempted);
-  localStorage.setItem("correct",correctCount);
+
+  document.getElementById(
+    "nextQuestion"
+  ).style.display="inline-block";
 
 }
 
 
-/* ---------------- MOCK TEST ---------------- */
+/* =====================================================
+   MOCK TEST
+===================================================== */
 
-let mockQuestions = [];
-let mockIndex = 0;
-let mockScore = 0;
+let mockQuestions=[];
+let mockIndex=0;
+let mockScore=0;
+let mockTimer=null;
+let mockTimeLeft=0;
 
 
-function startMock() {
+/* Start mock */
 
-  mockQuestions = [...questions]
-    .sort(() => Math.random()-0.5)
-    .slice(0,5);
+function startMock(){
 
-  mockIndex = 0;
-  mockScore = 0;
+  const type=
+    document.getElementById(
+      "mockSubject"
+    ).value;
+
+  const count=
+    Number(
+      document.getElementById(
+        "mockCount"
+      ).value
+    );
+
+
+  let pool=[...questions];
+
+
+  /* Subject-specific mock */
+
+  if(
+    type==="Physics" ||
+    type==="Chemistry" ||
+    type==="Mathematics"
+  ){
+
+    pool=
+      pool.filter(q=>
+        q.subject===type
+      );
+
+  }
+
+
+  /* Shuffle */
+
+  pool.sort(
+    ()=>Math.random()-.5
+  );
+
+
+  /* If there are fewer questions
+     than requested, use all available. */
+
+  mockQuestions=
+    pool.slice(
+      0,
+      Math.min(count,pool.length)
+    );
+
+
+  mockIndex=0;
+  mockScore=0;
+
+
+  /*
+    Each question gets 60 seconds.
+    This is a simple demo timer.
+  */
+
+  mockTimeLeft=
+    mockQuestions.length*60;
+
+
+  clearInterval(mockTimer);
+
 
   showMockQuestion();
+
+
+  mockTimer=
+    setInterval(()=>{
+
+      mockTimeLeft--;
+
+      updateTimer();
+
+      if(mockTimeLeft<=0){
+
+        clearInterval(mockTimer);
+
+        finishMock();
+
+      }
+
+    },1000);
+
 }
 
 
-function showMockQuestion() {
+/* Show timer */
 
-  if(mockIndex >= mockQuestions.length) {
+function updateTimer(){
+
+  const timer=
+    document.getElementById(
+      "mockTimer"
+    );
+
+  if(!timer)return;
+
+  const minutes=
+    Math.floor(
+      mockTimeLeft/60
+    );
+
+  const seconds=
+    mockTimeLeft%60;
+
+  timer.textContent=
+    "⏱️ "+
+    minutes+
+    ":"+
+    String(seconds).padStart(2,"0");
+
+}
+
+
+/* Show mock question */
+
+function showMockQuestion(){
+
+  if(mockIndex>=mockQuestions.length){
 
     finishMock();
 
     return;
+
   }
 
-  const q = mockQuestions[mockIndex];
 
-  let html = `
+  const q=
+    mockQuestions[mockIndex];
+
+
+  const progress=
+    Math.round(
+      (mockIndex/mockQuestions.length)*100
+    );
+
+
+  let html=`
+
     <div class="question-box">
 
-      <p>
-        Question ${mockIndex+1} of ${mockQuestions.length}
-      </p>
+      <div class="timer"
+           id="mockTimer">
 
-      <h3 style="margin:15px 0;">
+        ⏱️ Loading...
+
+      </div>
+
+
+      <div class="mock-info">
+
+        <div class="info-box">
+          Question ${mockIndex+1}
+          / ${mockQuestions.length}
+        </div>
+
+        <div class="info-box">
+          ${q.subject}
+        </div>
+
+      </div>
+
+
+      <div class="progress-bar">
+
+        <div
+          class="progress-fill"
+          style="width:${progress}%">
+
+        </div>
+
+      </div>
+
+
+      <h3 class="question-text">
         ${q.q}
       </h3>
+
   `;
 
-  q.options.forEach((option,index) => {
 
-    html += `
-      <button class="option"
+  q.options.forEach((option,index)=>{
+
+    html+=`
+
+      <button
+        class="option"
         onclick="answerMock(${index})">
-        ${String.fromCharCode(65+index)}. ${option}
+
+        ${String.fromCharCode(65+index)}.
+        ${option}
+
       </button>
+
     `;
 
   });
 
-  html += "</div>";
 
-  document.getElementById("mockArea").innerHTML = html;
+  html+=`
+
+    </div>
+
+  `;
+
+
+  document.getElementById(
+    "mockArea"
+  ).innerHTML=html;
+
+
+  updateTimer();
+
 }
 
 
-function answerMock(selected) {
+/* Answer mock question */
 
-  const q = mockQuestions[mockIndex];
+function answerMock(selected){
 
-  if(selected === q.answer) {
+  const q=
+    mockQuestions[mockIndex];
+
+
+  if(selected===q.answer){
+
     mockScore++;
+
   }
+
 
   mockIndex++;
 
   showMockQuestion();
+
 }
 
 
-function finishMock() {
+/* Finish mock */
 
-  let tests =
-    Number(localStorage.getItem("tests") || 0);
+function finishMock(){
+
+  clearInterval(mockTimer);
+
+
+  if(
+    !mockQuestions ||
+    mockQuestions.length===0
+  ){
+
+    return;
+
+  }
+
+
+  let tests=
+    Number(
+      localStorage.getItem("tests")||0
+    );
+
 
   tests++;
 
-  localStorage.setItem("tests",tests);
 
-  document.getElementById("mockArea").innerHTML = `
-    <div id="result">
+  localStorage.setItem(
+    "tests",
+    tests
+  );
+
+
+  const percentage=
+    Math.round(
+      (mockScore/mockQuestions.length)*100
+    );
+
+
+  let best=
+    Number(
+      localStorage.getItem("bestScore")||0
+    );
+
+
+  if(percentage>best){
+
+    best=percentage;
+
+    localStorage.setItem(
+      "bestScore",
+      best
+    );
+
+  }
+
+
+  document.getElementById(
+    "mockArea"
+  ).innerHTML=`
+
+    <div class="result">
 
       <h2>🎉 Test Completed!</h2>
 
-      <p style="margin-top:10px;">
-        Score: <b>${mockScore}/${mockQuestions.length}</b>
+      <p style="margin-top:12px">
+        Score:
+        <b>
+          ${mockScore}/${mockQuestions.length}
+        </b>
       </p>
 
-      <button class="btn" onclick="showSection('progress')">
-        View Progress
+      <p style="margin-top:8px">
+        Percentage:
+        <b>${percentage}%</b>
+      </p>
+
+      <p style="margin-top:8px">
+        Best Score:
+        <b>${best}%</b>
+      </p>
+
+
+      <button
+        class="btn"
+        onclick="startMock()">
+
+        🔄 Try Again
+
+      </button>
+
+
+      <button
+        class="btn secondary"
+        onclick="showSection('progress')">
+
+        📊 View Progress
+
       </button>
 
     </div>
+
   `;
+
 }
 
 
-/* ---------------- PROGRESS ---------------- */
+/* =====================================================
+   PROGRESS
+===================================================== */
 
-function updateProgress() {
+function updateProgress(){
 
-  const attempted =
-    Number(localStorage.getItem("attempted") || 0);
+  const attempted=
+    Number(
+      localStorage.getItem("attempted")||0
+    );
 
-  const correct =
-    Number(localStorage.getItem("correct") || 0);
+  const correct=
+    Number(
+      localStorage.getItem("correct")||0
+    );
 
-  const tests =
-    Number(localStorage.getItem("tests") || 0);
+  const tests=
+    Number(
+      localStorage.getItem("tests")||0
+    );
 
-  let accuracy =
-    attempted === 0
-    ? 0
-    : Math.round((correct/attempted)*100);
+  const best=
+    Number(
+      localStorage.getItem("bestScore")||0
+    );
 
-  document.getElementById("attempted").textContent = attempted;
-  document.getElementById("correct").textContent = correct;
-  document.getElementById("accuracy").textContent = accuracy + "%";
-  document.getElementById("tests").textContent = tests;
+
+  const accuracy=
+    attempted===0
+      ? 0
+      : Math.round(
+          (correct/attempted)*100
+        );
+
+
+  document.getElementById(
+    "attempted"
+  ).textContent=attempted;
+
+
+  document.getElementById(
+    "correct"
+  ).textContent=correct;
+
+
+  document.getElementById(
+    "accuracy"
+  ).textContent=
+    accuracy+"%";
+
+
+  document.getElementById(
+    "tests"
+  ).textContent=tests;
+
+
+  document.getElementById(
+    "bestScore"
+  ).textContent=
+    best+"%";
+
+
+  document.getElementById(
+    "progressFill"
+  ).style.width=
+    accuracy+"%";
+
 }
 
 
-/* Start with chapter list */
+/* =====================================================
+   RESET PROGRESS
+===================================================== */
+
+function resetProgress(){
+
+  const confirmReset=
+    confirm(
+      "Are you sure you want to reset all progress?"
+    );
+
+
+  if(!confirmReset){
+
+    return;
+
+  }
+
+
+  localStorage.removeItem("attempted");
+  localStorage.removeItem("correct");
+  localStorage.removeItem("tests");
+  localStorage.removeItem("bestScore");
+
+
+  updateProgress();
+
+
+  alert(
+    "Progress has been reset."
+  );
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
 
 updateChapters();
+
+updateProgress();
 
 </script>
 
