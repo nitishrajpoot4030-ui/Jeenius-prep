@@ -1,302 +1,804 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jeenius Path</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeenius Path</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      background: #f5f7ff;
-      color: #172033;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
 
-    header {
-      background: linear-gradient(135deg, #5b5be7, #8e44ad);
-      color: white;
-      padding: 20px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+header {
+  background: #111827;
+  color: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-    }
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  margin: 5px 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #eef0ff, #fff0fb);
-    }
+.hero {
+  text-align: center;
+  padding: 55px 20px;
+  background: linear-gradient(135deg,#dbeafe,#f5f3ff);
+}
 
-    .hero h1 {
-      font-size: 52px;
-      color: #5b35d5;
-      margin-bottom: 15px;
-    }
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
 
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
+.hero p {
+  font-size: 18px;
+  margin: 8px;
+}
 
-    .creator {
-      font-size: 14px;
-      margin-bottom: 30px;
-      color: #666;
-    }
+.btn {
+  border: none;
+  padding: 13px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px 5px;
+  font-size: 15px;
+  font-weight: bold;
+  background: #2563eb;
+  color: white;
+}
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
+.btn:hover {
+  opacity: 0.85;
+}
 
-    .btn {
-      border: none;
-      padding: 15px 25px;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      background: #5b35d5;
-      color: white;
-    }
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 35px auto;
+}
 
-    .btn:hover {
-      opacity: 0.85;
-    }
+.section-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 30px;
+}
 
-    section {
-      padding: 55px 7%;
-      text-align: center;
-    }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
 
-    section h2 {
-      font-size: 32px;
-      margin-bottom: 30px;
-    }
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+.card h3 {
+  margin-bottom: 10px;
+}
 
-    .card {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 18px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
+.green { border-top: 6px solid #22c55e; }
+.yellow { border-top: 6px solid #eab308; }
+.red { border-top: 6px solid #ef4444; }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+select, input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccd3df;
+  border-radius: 7px;
+}
 
-    .card .icon {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
+.question-box {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
 
-    .easy {
-      border-top: 6px solid #22c55e;
-    }
+.option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #f1f5f9;
+  border: 1px solid #d5dce5;
+  padding: 13px;
+  margin: 10px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-    .medium {
-      border-top: 6px solid #f59e0b;
-    }
+.option:hover {
+  background: #e2e8f0;
+}
 
-    .hard {
-      border-top: 6px solid #ef4444;
-    }
+.hidden {
+  display: none;
+}
 
-    .feature {
-      border-top: 6px solid #5b35d5;
-    }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
 
-    footer {
-      background: #17152d;
-      color: white;
-      text-align: center;
-      padding: 30px;
-    }
+.stat {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+}
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 38px;
-      }
+.stat strong {
+  display: block;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
 
-      nav {
-        width: 100%;
-        text-align: center;
-      }
+footer {
+  text-align: center;
+  background: #111827;
+  color: white;
+  padding: 25px;
+  margin-top: 50px;
+}
 
-      nav a {
-        margin: 5px;
-        display: inline-block;
-      }
-    }
-  </style>
+.badge {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #e0e7ff;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 20px;
+  background: #ecfdf5;
+  border-radius: 10px;
+  font-size: 18px;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">🧠 Jeenius Path</div>
+<header>
+  <div class="logo">🧠 Jeenius Path</div>
 
-    <nav>
-      <a href="#practice">Practice</a>
-      <a href="#tests">Mock Tests</a>
-      <a href="#features">Features</a>
-    </nav>
-  </header>
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('practice')">Practice</button>
+    <button onclick="showSection('mock')">Mock Test</button>
+    <button onclick="showSection('progress')">Progress</button>
+  </nav>
+</header>
+
+
+<!-- HOME -->
+<section id="home">
 
   <div class="hero">
-    <h1>Jeenius Path</h1>
+    <h1>Jeenius Path 🚀</h1>
+    <p>Practice • Test • Analyse • Improve</p>
+    <p><b>Built by Ansh Kumar</b></p>
 
-    <p>
-      Practice • Test • Analyse • Improve
-    </p>
+    <button class="btn" onclick="showSection('practice')">
+      Start Practicing
+    </button>
 
-    <p class="creator">
-      Built by Ansh Kumar
-    </p>
+    <button class="btn" onclick="showSection('mock')">
+      Take a Mock Test
+    </button>
+  </div>
 
-    <div class="buttons">
-      <button class="btn" onclick="startPractice()">
-        Start Practicing
-      </button>
+  <div class="container">
 
-      <button class="btn" onclick="startMockTest()">
-        Take a Mock Test
-      </button>
+    <h2 class="section-title">Choose Your Level</h2>
+
+    <div class="cards">
+
+      <div class="card green">
+        <h3>🟢 Easy</h3>
+        <p>JEE Main level practice.</p>
+        <button class="btn" onclick="startPractice('Easy')">
+          Practice
+        </button>
+      </div>
+
+      <div class="card yellow">
+        <h3>🟡 Medium</h3>
+        <p>JEE Main + JEE Advanced level.</p>
+        <button class="btn" onclick="startPractice('Medium')">
+          Practice
+        </button>
+      </div>
+
+      <div class="card red">
+        <h3>🔴 Hard</h3>
+        <p>JEE Advanced + deep problem solving.</p>
+        <button class="btn" onclick="startPractice('Hard')">
+          Practice
+        </button>
+      </div>
+
     </div>
   </div>
 
-  <section id="practice">
-    <h2>📝 Question Practice</h2>
+</section>
 
-    <div class="cards">
 
-      <div class="card easy" onclick="selectLevel('Easy')">
-        <div class="icon">🟢</div>
-        <h3>Easy</h3>
-        <p>JEE Main Level</p>
+<!-- PRACTICE -->
+<section id="practice" class="hidden">
+
+  <div class="container">
+
+    <h2 class="section-title">Question Practice 📚</h2>
+
+    <div class="card">
+
+      <label><b>Subject</b></label>
+
+      <select id="subjectSelect" onchange="updateChapters()">
+        <option value="Physics">Physics</option>
+        <option value="Chemistry">Chemistry</option>
+        <option value="Mathematics">Mathematics</option>
+      </select>
+
+      <label><b>Chapter</b></label>
+
+      <select id="chapterSelect">
+      </select>
+
+      <label><b>Difficulty</b></label>
+
+      <select id="difficultySelect">
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
+      </select>
+
+      <button class="btn" onclick="loadQuestion()">
+        Start Question
+      </button>
+
+    </div>
+
+    <div id="questionArea"></div>
+
+  </div>
+
+</section>
+
+
+<!-- MOCK TEST -->
+<section id="mock" class="hidden">
+
+  <div class="container">
+
+    <h2 class="section-title">Mock Test 📝</h2>
+
+    <div class="card">
+
+      <label><b>Choose Test</b></label>
+
+      <select id="mockSubject">
+        <option>JEE Main</option>
+        <option>JEE Advanced</option>
+        <option>Physics</option>
+        <option>Chemistry</option>
+        <option>Mathematics</option>
+      </select>
+
+      <button class="btn" onclick="startMock()">
+        Start Mock Test
+      </button>
+
+    </div>
+
+    <div id="mockArea"></div>
+
+  </div>
+
+</section>
+
+
+<!-- PROGRESS -->
+<section id="progress" class="hidden">
+
+  <div class="container">
+
+    <h2 class="section-title">Your Progress 📊</h2>
+
+    <div class="stats">
+
+      <div class="stat">
+        <strong id="attempted">0</strong>
+        Questions Attempted
       </div>
 
-      <div class="card medium" onclick="selectLevel('Medium')">
-        <div class="icon">🟡</div>
-        <h3>Medium</h3>
-        <p>JEE Main → Advanced</p>
+      <div class="stat">
+        <strong id="correct">0</strong>
+        Correct
       </div>
 
-      <div class="card hard" onclick="selectLevel('Hard')">
-        <div class="icon">🔴</div>
-        <h3>Hard</h3>
-        <p>Advanced + Deep Problems</p>
+      <div class="stat">
+        <strong id="accuracy">0%</strong>
+        Accuracy
+      </div>
+
+      <div class="stat">
+        <strong id="tests">0</strong>
+        Mock Tests
       </div>
 
     </div>
-  </section>
 
-  <section id="tests">
-    <h2>🧪 Mock Tests</h2>
+  </div>
 
-    <div class="cards">
+</section>
 
-      <div class="card feature" onclick="startMockTest()">
-        <div class="icon">🎯</div>
-        <h3>JEE Main Test</h3>
-        <p>Practice with JEE Main style tests.</p>
+
+<footer>
+  <p>© 2026 Jeenius Path</p>
+  <p>Built by Ansh Kumar 🚀</p>
+</footer>
+
+
+<script>
+
+/* ---------------- DATA ---------------- */
+
+const chapters = {
+
+  Physics: [
+    "Units & Measurements",
+    "Kinematics",
+    "Laws of Motion",
+    "Work, Energy & Power",
+    "Rotational Motion",
+    "Gravitation",
+    "Properties of Matter",
+    "Thermodynamics",
+    "Kinetic Theory",
+    "Oscillations",
+    "Waves",
+    "Electrostatics",
+    "Current Electricity",
+    "Magnetism",
+    "Electromagnetic Induction",
+    "Optics",
+    "Modern Physics"
+  ],
+
+  Chemistry: [
+    "Some Basic Concepts of Chemistry",
+    "Atomic Structure",
+    "Chemical Bonding",
+    "Thermodynamics",
+    "Equilibrium",
+    "Redox Reactions",
+    "Solutions",
+    "Electrochemistry",
+    "Chemical Kinetics",
+    "Periodic Table",
+    "p-Block Elements",
+    "d & f Block Elements",
+    "Coordination Compounds",
+    "Organic Chemistry Basics",
+    "Hydrocarbons",
+    "Alcohols, Phenols & Ethers",
+    "Aldehydes, Ketones & Carboxylic Acids",
+    "Amines"
+  ],
+
+  Mathematics: [
+    "Sets",
+    "Relations & Functions",
+    "Trigonometry",
+    "Complex Numbers",
+    "Quadratic Equations",
+    "Sequences & Series",
+    "Permutations & Combinations",
+    "Binomial Theorem",
+    "Straight Lines",
+    "Circles",
+    "Limits",
+    "Continuity & Differentiability",
+    "Application of Derivatives",
+    "Integrals",
+    "Differential Equations",
+    "Matrices",
+    "Determinants",
+    "Vectors",
+    "3D Geometry",
+    "Probability"
+  ]
+
+};
+
+
+/* Original sample questions.
+   These are NOT copied JEE PYQs. */
+
+const questions = [
+
+  {
+    subject:"Physics",
+    chapter:"Kinematics",
+    difficulty:"Easy",
+    q:"A car travels 20 m in 4 seconds. What is its average speed?",
+    options:["2 m/s","5 m/s","10 m/s","20 m/s"],
+    answer:1
+  },
+
+  {
+    subject:"Mathematics",
+    chapter:"Quadratic Equations",
+    difficulty:"Easy",
+    q:"If x² - 5x + 6 = 0, what is the sum of its roots?",
+    options:["2","3","5","6"],
+    answer:2
+  },
+
+  {
+    subject:"Chemistry",
+    chapter:"Atomic Structure",
+    difficulty:"Easy",
+    q:"Which particle has a negative charge?",
+    options:["Proton","Neutron","Electron","Nucleus"],
+    answer:2
+  },
+
+  {
+    subject:"Physics",
+    chapter:"Laws of Motion",
+    difficulty:"Medium",
+    q:"If the net force acting on an object is zero, its acceleration is:",
+    options:["Zero","Maximum","Negative","Infinite"],
+    answer:0
+  },
+
+  {
+    subject:"Mathematics",
+    chapter:"Sequences & Series",
+    difficulty:"Medium",
+    q:"The common difference of 3, 7, 11, 15,... is:",
+    options:["2","3","4","5"],
+    answer:2
+  },
+
+  {
+    subject:"Chemistry",
+    chapter:"Chemical Bonding",
+    difficulty:"Hard",
+    q:"Which type of bond involves sharing of electron pairs between atoms?",
+    options:["Ionic","Covalent","Metallic","Hydrogen"],
+    answer:1
+  }
+
+];
+
+
+/* ---------------- NAVIGATION ---------------- */
+
+function showSection(section) {
+
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("practice").classList.add("hidden");
+  document.getElementById("mock").classList.add("hidden");
+  document.getElementById("progress").classList.add("hidden");
+
+  document.getElementById(section).classList.remove("hidden");
+
+  if(section === "progress") {
+    updateProgress();
+  }
+
+  if(section === "practice") {
+    updateChapters();
+  }
+}
+
+
+/* ---------------- PRACTICE ---------------- */
+
+function updateChapters() {
+
+  const subject =
+    document.getElementById("subjectSelect").value;
+
+  const select =
+    document.getElementById("chapterSelect");
+
+  select.innerHTML = "";
+
+  chapters[subject].forEach(chapter => {
+
+    const option = document.createElement("option");
+
+    option.textContent = chapter;
+    option.value = chapter;
+
+    select.appendChild(option);
+
+  });
+}
+
+
+function startPractice(level) {
+
+  showSection("practice");
+
+  document.getElementById("difficultySelect").value = level;
+
+  loadQuestion();
+}
+
+
+function loadQuestion() {
+
+  const subject =
+    document.getElementById("subjectSelect").value;
+
+  const chapter =
+    document.getElementById("chapterSelect").value;
+
+  const difficulty =
+    document.getElementById("difficultySelect").value;
+
+  let matches = questions.filter(q =>
+    q.subject === subject &&
+    q.chapter === chapter &&
+    q.difficulty === difficulty
+  );
+
+  /* If no exact sample question exists,
+     show an explanation instead of pretending
+     it is a PYQ. */
+
+  if(matches.length === 0) {
+
+    document.getElementById("questionArea").innerHTML = `
+      <div class="question-box">
+        <h3>📚 Question Bank Coming Soon</h3>
+        <p>
+          We don't have an original sample question for
+          this exact subject + chapter + difficulty yet.
+        </p>
+        <p style="margin-top:10px;">
+          More questions will be added in the next version.
+        </p>
       </div>
+    `;
 
-      <div class="card feature" onclick="startMockTest()">
-        <div class="icon">🔥</div>
-        <h3>JEE Advanced Test</h3>
-        <p>Challenge yourself with Advanced level questions.</p>
-      </div>
+    return;
+  }
 
-      <div class="card feature" onclick="customTest()">
-        <div class="icon">⚙️</div>
-        <h3>Custom Test</h3>
-        <p>Select your own chapters and difficulty.</p>
-      </div>
+  const question =
+    matches[Math.floor(Math.random()*matches.length)];
+
+  let html = `
+    <div class="question-box">
+
+      <span class="badge">${question.difficulty}</span>
+
+      <h3 style="margin:15px 0;">
+        ${question.q}
+      </h3>
+  `;
+
+  question.options.forEach((option,index) => {
+
+    html += `
+      <button class="option"
+        onclick="checkAnswer(${index},${question.answer})">
+        ${String.fromCharCode(65+index)}. ${option}
+      </button>
+    `;
+
+  });
+
+  html += `
+      <div id="answerResult"></div>
+    </div>
+  `;
+
+  document.getElementById("questionArea").innerHTML = html;
+}
+
+
+function checkAnswer(selected,correct) {
+
+  let attempted =
+    Number(localStorage.getItem("attempted") || 0);
+
+  let correctCount =
+    Number(localStorage.getItem("correct") || 0);
+
+  attempted++;
+
+  if(selected === correct) {
+
+    correctCount++;
+
+    document.getElementById("answerResult").innerHTML =
+      "<p style='margin-top:15px'><b>✅ Correct!</b></p>";
+
+  } else {
+
+    document.getElementById("answerResult").innerHTML =
+      "<p style='margin-top:15px'><b>❌ Incorrect. Try another question!</b></p>";
+
+  }
+
+  localStorage.setItem("attempted",attempted);
+  localStorage.setItem("correct",correctCount);
+
+}
+
+
+/* ---------------- MOCK TEST ---------------- */
+
+let mockQuestions = [];
+let mockIndex = 0;
+let mockScore = 0;
+
+
+function startMock() {
+
+  mockQuestions = [...questions]
+    .sort(() => Math.random()-0.5)
+    .slice(0,5);
+
+  mockIndex = 0;
+  mockScore = 0;
+
+  showMockQuestion();
+}
+
+
+function showMockQuestion() {
+
+  if(mockIndex >= mockQuestions.length) {
+
+    finishMock();
+
+    return;
+  }
+
+  const q = mockQuestions[mockIndex];
+
+  let html = `
+    <div class="question-box">
+
+      <p>
+        Question ${mockIndex+1} of ${mockQuestions.length}
+      </p>
+
+      <h3 style="margin:15px 0;">
+        ${q.q}
+      </h3>
+  `;
+
+  q.options.forEach((option,index) => {
+
+    html += `
+      <button class="option"
+        onclick="answerMock(${index})">
+        ${String.fromCharCode(65+index)}. ${option}
+      </button>
+    `;
+
+  });
+
+  html += "</div>";
+
+  document.getElementById("mockArea").innerHTML = html;
+}
+
+
+function answerMock(selected) {
+
+  const q = mockQuestions[mockIndex];
+
+  if(selected === q.answer) {
+    mockScore++;
+  }
+
+  mockIndex++;
+
+  showMockQuestion();
+}
+
+
+function finishMock() {
+
+  let tests =
+    Number(localStorage.getItem("tests") || 0);
+
+  tests++;
+
+  localStorage.setItem("tests",tests);
+
+  document.getElementById("mockArea").innerHTML = `
+    <div id="result">
+
+      <h2>🎉 Test Completed!</h2>
+
+      <p style="margin-top:10px;">
+        Score: <b>${mockScore}/${mockQuestions.length}</b>
+      </p>
+
+      <button class="btn" onclick="showSection('progress')">
+        View Progress
+      </button>
 
     </div>
-  </section>
+  `;
+}
 
-  <section id="features">
-    <h2>🚀 More Coming Soon</h2>
 
-    <div class="cards">
+/* ---------------- PROGRESS ---------------- */
 
-      <div class="card feature">
-        <div class="icon">❓</div>
-        <h3>Doubt Community</h3>
-        <p>Ask and discuss JEE doubts.</p>
-      </div>
+function updateProgress() {
 
-      <div class="card feature">
-        <div class="icon">📅</div>
-        <h3>My Day</h3>
-        <p>Create and track your daily study schedule.</p>
-      </div>
+  const attempted =
+    Number(localStorage.getItem("attempted") || 0);
 
-      <div class="card feature">
-        <div class="icon">📊</div>
-        <h3>Progress</h3>
-        <p>Analyse your preparation and performance.</p>
-      </div>
+  const correct =
+    Number(localStorage.getItem("correct") || 0);
 
-    </div>
-  </section>
+  const tests =
+    Number(localStorage.getItem("tests") || 0);
 
-  <footer>
-    <p>© 2026 Jeenius Path</p>
-    <p>Built by Ansh Kumar</p>
-  </footer>
+  let accuracy =
+    attempted === 0
+    ? 0
+    : Math.round((correct/attempted)*100);
 
-  <script>
+  document.getElementById("attempted").textContent = attempted;
+  document.getElementById("correct").textContent = correct;
+  document.getElementById("accuracy").textContent = accuracy + "%";
+  document.getElementById("tests").textContent = tests;
+}
 
-    function startPractice() {
-      alert("Question Practice will be available here!");
-    }
 
-    function startMockTest() {
-      alert("Mock Test section will be available here!");
-    }
+/* Start with chapter list */
 
-    function selectLevel(level) {
-      alert("You selected: " + level);
-    }
+updateChapters();
 
-    function customTest() {
-      alert("Custom Test builder coming soon!");
-    }
-
-  </script>
+</script>
 
 </body>
 </html>
